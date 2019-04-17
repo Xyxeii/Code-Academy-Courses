@@ -1,0 +1,61 @@
+---------------------------
+Navigating the File System
+---------------------------
+Command Line Commands - https://www.codecademy.com/articles/command-line-commands
+
+
+
+Filesystem
+---------------------------
+Codeacademy Working Directory = home/ccuser/workspace/
+File Tree Structure = https://s3.amazonaws.com/codecademy-content/courses/learn-command-line/img/LCL-fileTrees-01.png
+
+
+Definitions
+---------------------------
+
+CLI - Command Line Interface
+
+filesystem: organizes a computer's files and directories into a tree structure
+
+directory: folder to story files
+
+ls: lists contents of the directory e.g: drwxr-xr-x 5  cc  eng  4096 Jun 24 16:51  action
+--Options that can be added to ls. Options can be combined:
+	 -a lists all files including hidden
+	 -l lists longer versions of files
+	 	- first row indicates access rights
+	 	- second row indicates the number of child directories and files. Includes parent directory and current directory
+	 	- third row indicates the username of the files' owner
+	 	- the name of the group that owns the file
+	 	- the size of the file in bytes
+	 	- the date & time that the file was last modified
+	 	- the name of the file or directory
+	 -t orders files and directories by time last modified
+	 -alt 
+
+pwd: Print Working Directory - comes in handy when you want to ensure you’re in the right directory
+
+working directory: the directory you're currently in
+
+mkdir: make directory. Takes the directory name as an argument. e.g: mkdir filename
+
+touch: creates a new file inside the working directory. Takes file name as an argument. e.g: touch filename.txt
+
+cd: change directory
+
+cd .. : move back a directory. Can be combined with a backslash to jump back multiple directories. e.g: cd ../../../ to jump back 3 directories
+
+cp: copies and pastes files or directories. The first argument(s) copies the files. The last argument pastes them to that location. Can be used to copy the contents of a file to another file by using a file name as the last argument
+* : a 'Wildcard'. Used to select groups of files. e.g: cp * satire/ copies all files in the current directory into 'satire'. cp m*.txt scifi/ copies a files in the current directory starting with 'm' and ending in 'txt' into the directory 'scifi'
+
+mv: moves files. The first argument cuts the file and the last argument pastes it into the location listed. Multiple files can be selected similar to cp. Mv can also be used to rename files. By using a file name as the last arguement, you can "move" the file into it, causing it to be renamed. *This does overwrite the file.
+
+rm: deletes files and directories permanently
+	-r : stands for "recursive". Used as an option to 'rm' and deletes a directory and all of it's children
+
+
+
+
+
+
