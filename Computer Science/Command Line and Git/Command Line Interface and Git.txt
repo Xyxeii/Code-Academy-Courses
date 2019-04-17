@@ -1,0 +1,47 @@
+-----------------------------
+Basic Git Workflow
+-----------------------------
+
+Commands
+---------------------------
+
+
+Git
+---------------------------
+'git init' - creates a new Git repository
+
+'git status' can be used to check changes in the working directory. Files howing up in red are untracked files. Adding file names to a '.gitignore' file can be used for git to ignore. 
+
+'.gitignore' a file specified in the git directory. Can be used to ignore specific file types such as log files or any file that doesn't need to be tracked and maintained as part of the essential project.
+
+'git add filename' - add a file to the staging area
+
+'git rm --cached filename' - remove a file from the staging area
+
+'git diff filename' - check the differences between the working directory and the staging area
+
+'git commit' - commit a file
+*options*
+	'-m'	 - adds a message to a commit. Must be in quotation marks, written in present tense, 50 characters or less. 
+
+'git log' - view commits
+
+
+Definitions
+---------------------------
+
+Bash: Bourne-Again SHell - A command line inteface created over 27 years ago by Brian Fox
+
+Working Directory: where you’ll be doing all the work: creating, editing, deleting and organizing files
+Staging Area: where you’ll list changes you make to the working directory
+Repository: where Git permanently stores those changes as different versions of the project
+Untracked Files: Files that git recognizes but hasn't starting tracking changes for. 
+
+commit: permanently stores changes from the staging area inside the repository
+
+
+
+------------------------------------
+Getting Started with Git and GitHub
+------------------------------------
+
