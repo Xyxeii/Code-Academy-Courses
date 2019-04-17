@@ -1,0 +1,28 @@
+-----------------------
+Introduction to Modules
+-----------------------
+
+A module is a collection of Python declarations intended broadly to be used as a tool. Modules are also often referred to as “libraries” or “packages” — a package is really a directory that holds a collection of modules.
+
+The basic syntax to use a module in python is: from 'module_name' import 'object_name'
+
+namespace: a system to make sure that all the names in a program are unique and can be used without any conflict. Multiple namespaces can use the same name and map it to a different object. Here are a few examples of namespaces:
+
+- Local Namespace: This namespace includes local names inside a function. This namespace is created when a function is called, and it only lasts until the function returns.
+- Global Namespace: This namespace includes names from various imported modules that you are using in a project. It is created when the module is included in the project, and it lasts until the script ends.
+- Built-in Namespace: This namespace includes built-in functions and built-in exception names.
+
+multiple directory importing: https://discuss.codecademy.com/t/do-imported-files-always-have-to-be-in-the-same-directory/375374
+
+----------------
+Useful Functions
+----------------
+
+import: used to import a directory or module
+	as- can be used to alias the imported module with a custom name. E.g: import 'module_name' as 'name_you_pick_for_the_module'
+	* - a wildcard symbol. Matches everything in a module. This should be avoided as it can polute the namespace
+
+dir(arg1): takes the name of a directory or module and returns a list of all the attributes of that module
+
+help(arg1): takes the name of a directory or module and returns help pages designed by the author
+

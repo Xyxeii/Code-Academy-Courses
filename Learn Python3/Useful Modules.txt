@@ -1,0 +1,16 @@
+------------------------
+Python: Useful Modules - https://docs.python.org/3/library/
+------------------------
+
+datetime: helps you work with dates and times
+		- strptime: allows you to take a string input and convert it to a datetime format
+		- strftime: the opposite of strptime; allows you to take a datetime return and format it into a string
+					https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+					
+
+random: allows you to generate or manipulate random numbers
+
+matplotlib: helps with plotting python code in 2d
+
+decimal: helps perform decimal place arithmetic more accurately
+
