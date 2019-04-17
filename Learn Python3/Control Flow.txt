@@ -1,0 +1,29 @@
+-----------------------------
+Control Flow: An Introduction
+-----------------------------
+The flow or order that your program will run in
+
+
+Relational Operators can be used to compare strings and sequences of values (lists). When comparing strings or sequences the comparisons are done 'lexicographical' (alphabetical). The first two values are compared, then the second two items, and so on.
+
+The 'not' operator has a lower precedence than the comparison operators such as ==, !=, <, >, <= and >=.
+
+'try' and 'except' can be used to check for possible errors that a user might encounter
+
+
+Definitions
+---------------------------
+Conditionals - if, elif, else
+
+Boolean Expressions - a true or false statement
+
+Boolean Variable - a variable that is assigned a bool value (true or false)
+
+Booleans Operators - also known as logical operators, combine smaller boolean expressions into larger boolean expressions. eg (and)(or)(not)
+
+Relational Operators - compare two items and return a boolean expression eg: (==) (!=) (>=) (>) (<=) (<)
+
+Comparators - another name for Relational Operators
+
+Chaining - a term for linking together expressions with a transitive relation. eg: (a < b) and (b < c) and (c < d) into a < b < c < d
+

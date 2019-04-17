@@ -1,0 +1,21 @@
+----------------
+Tuples and Loops
+----------------
+
+tuples - a sequence of immutable (cannot be changed) objects. Similar to a list, however created using parentheses. Tuples can be contained in a list. 
+
+Loops - an expression that iterates through a statement a set amount of times. There are 'for' loops and 'while' loops.
+
+for loops - used to iterate through each value in an object. To set a specific length or to itterate a set number of times, range() can be used as the object. 
+
+while loops - performs a set of code until a condition is met
+
+infinite loops - A loop that never terminates. You can terminate a program by using CTRL + C. This is useful if you get stuck with an infinite loop.
+
+continue - continue can be used to skip a value while iterating through a list 
+
+nested loops - a loop contained inside of another loop. Useful for iterating through nested lists
+
+List comprehension - creating a list using an expression inside of an empty list. eg: usernames = [word for word in words if word[0] == '@']
+
+reversed() - this function can be used in a for loop to iterate over a list in reverse

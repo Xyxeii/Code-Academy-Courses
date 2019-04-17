@@ -1,0 +1,48 @@
+------------------------
+Python: Useful Functions - https://www.programiz.com/python-programming/methods
+------------------------
+
+counting the occurence of multiple items using a single loop - https://discuss.codecademy.com/t/is-it-possible-to-count-the-occurrences-of-multiple-items-in-a-list-using-a-single-loop/377325
+
+try: 	both are used to catch exceptions and throw errors
+except: 
+
+sum(iterable, start):
+	iterable: whose item's sum is to be found. 
+	start: a value added to the sum of items of the iterable. Default is 0
+
+abs(num):
+	num: whose absolute value to be returned
+
+string.upper(): returns all characters in the defined string as uppercase
+
+string.lower(): returns all the characters in the defined string as lowercase
+
+zip(): combines two tables or iterables into an iterator of tuples. If the tables or iterables are of different lengths, the shortest one is used to determine the new length. 
+
+list(): creates a list. Can convert a zip() iterator of tuples back into a list. Can also take a collection (set, dictionary) or iterator object
+
+.index: returns the index of a string within a list
+
+.append(): Adds an element to the end of a list
+
+.extend(): Similar to .append, this can be used to add multiple elements to a list. This is equivalent to concatenating two lists
+
+.pop(): removes the element at the specified position in a list. 
+
+reversed() - used in a for loop to iterate over a list in reverse
+
+range(startpoint(optional), range, skip(optional)): creates a object that contains numbers from default(0) to 1 number before the input. This must be converted to a list using list() to get a proper printout
+	startpoint: a number for the list to start at
+	range: the range of the list
+	skip: a value that the list will skip when creating the list
+
+del list[:]: can be used to empty a list. Although setting the list variable is preferred
+
+.sort(): used to sort a list in ascending order. The reverse argument can be used to reverse the order of the list **Cannot be assigned as a variable**
+
+sorted(): creates a new sorted list using a list name as the argument. **Does not change the original list**
+
+len(): returns the length of the list from 0 to end
+
+.count(): count how many times a value exists in a list. Returns 0 if that value isnt found

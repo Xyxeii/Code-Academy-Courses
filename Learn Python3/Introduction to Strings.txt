@@ -1,0 +1,36 @@
+-----------------------
+Introduction to Strings
+-----------------------
+
+Strings are used to store a sequence of characters. It can be any length and contain and letters, numbers, symbols and spaces. Strings can be thought of as a list of characters and therefore can be indexed as such. This is known as 'Slicing a String'. 
+
+\ - can be used to escape a character. This is useful when attempt to use protected characters in a string. This does not add to the length of the string.
+
+
+--------------
+String Methods
+--------------
+
+Python comes with built-in string methods that gives you the power to perform complicated tasks on strings very quickly and efficiently. You can call multiple string methods in a single statement
+
+eg:
+
+.upper() : returns a string as all uppercase
+
+.lower() : returns are string as all lowercase
+
+.title() : returns a string while capatalizing the first letter of each word within the string
+
+.split() : is performed on a string, takes one argument, and returns a list of substrings found between the given argument
+
+.join() : the opposite of .split(). returns the contents of a list as a single string
+- https://discuss.codecademy.com/t/if-you-do-a-join-after-a-split-using-the-same-delimiter-does-this-result-in-the-original-string/375547
+
+.replace() : replaces all characters in arg1 with all characters in arg2
+
+.strip() : removes all unnecessary spacing from a string
+
+.format() : formats a string
+
+.find() : returns the first index value where the string is located
+- https://discuss.codecademy.com/t/how-can-i-find-all-indices-where-a-substring-appears-in-a-string/375564
