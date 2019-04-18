@@ -29,7 +29,7 @@ def secret_message(msg, cipher):
 def vCoder(msg, keyword):
 	decoded_msg = []
 	keycode = []
-	testlist = []
+	#testlist = []
 	#keycodeIndex = 0
 	while len(keycode) < len(msg):
 		for i in keyword:
