@@ -1,0 +1,37 @@
+------------
+Dictionaries
+------------
+A dictionary is an unordered set of key: value pairs. A dictionary begins and ends with curly braces '{ }'. Each item in a dictionary consists of a key and value. These values are separated with a comma; similar to lists. Keys can be strings as well as numbers. Values can be any type (string, number, list, tuple or even another dictionary). 
+
+List or dictionary types can not be used as the key in another dictionary. 
+-- The word “unhashable” in this context means that this ‘list’ is an object that can be changed. Dictionaries in Python rely on each key having a hash value, a specific identifier for the key. If the key can change, that hash value would not be reliable. So the keys must always be unchangeable, hashable data types, like numbers or strings.
+**However, tuples can be used as keys in a dictionary as they are hashable** eg: coordinates = { (0,0) : 100, (1,1) : 200}
+
+
+----------------
+Useful Functions
+----------------
+
+dict(): can be used to turn a string(s) into a dictionary
+
+.update(): used to add keys and values to a dictionary. The index syntax can also be used. e.g: 'locations['Paris'] = 100'
+		 - the data type can be changed when updating the values in a dictionary
+
+.len(): can be used to determine the size of a dictionary
+	  	: both can be used to determine if a dictionary is empty. len() will result in 0 and bool() will result in False. 
+bool(): used to determine if a dictionary contains any values. Dictionaries evaluate to a Boolean value, therefore an empty dictionary will result in False. 
+
+zip(): useful when combining two lists to be used as keys and values in a dictionary. If used on duplicate values in a list it will act as and update when combined
+
+.get(key(optional), arg2(optional)): used to search for a value instead of using the dict[key] notation. arg1 is technically optional and will function as an alternative to checking for a key using 'in'. arg2 can be used to specify a return value if the key doesn't return anything.
+
+.pop(key, arg2(optional)): used to remove a pair from a dictionary. The key must be specified. arg2 can be specified to return if the key isn't found.
+
+list(): can be used to gather a list of all keys in a dictionary
+
+.keys(): returns a dict_keys object. You cannot modify this value, however it can be used to iterate over. These is no guarenteed order for the list returned. In most cases, the key list is returned in the same order as the insertion, however, that behavior is NOT guaranteed and should not be depended on by your program. A common practice is to pass keys() to the sorted() function to ensure that the list of keys is sorted before iteration.
+
+.values(): returns a dict_values object. This is similar to .keys() but used for values. Can 
+
+.items(): returns a dict_list object. Each element of dict_list returned by .items() is a tuple consisting of (key, value)
+
