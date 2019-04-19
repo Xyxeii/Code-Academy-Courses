@@ -2,7 +2,6 @@ import string
 letters = zip(string.ascii_lowercase, string.ascii_uppercase)
 #letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 points = [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 4, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10]
-
 player_to_words = {'player1': ['BLUE', 'TENNIS', 'EXIT'], 'wordNerd': ['EARTH', 'EYES', 'MACHINE'], 'Lexi Con': ['ERASER', 'BELLY', 'HUSKY'], 'Prof Reader': ['ZAP', 'COMA', 'PERIOD']}
 player_to_points = {}
 
@@ -23,6 +22,17 @@ def play_word(player, word):
 		for k,v in player_to_words.items():
 			if k == player and word not in v:
 				v.append(word)
+	else:
+		print("{} was not found and has been added. If this was unintended please run remove_player('PLAYERNAME')".format(player))
+		player_to_words[player] = []
+		play_word(player, word)
+
+def remove_player(player):
+	if player in player_to_words:
+		player_to_words.pop(player)
+		print("{} was successfully removed.".format(player))
+	else:
+		print("{} not found.".format(player))
 
 def update_point_totals():
 	for player,words in player_to_words.items():
@@ -37,6 +47,13 @@ play_word('player1', 'FUNNY')
 play_word('Lexi Con', 'INSANE')
 play_word('Lexi Con', 'BULLY')
 play_word('wordNerd', 'yellow')
+play_word('awdawd', 'yellow')
+play_word('New Player', 'yellow')
+
+remove_player('awdawd')
+remove_player('awdaw')
+
+
 
 
 update_point_totals()
