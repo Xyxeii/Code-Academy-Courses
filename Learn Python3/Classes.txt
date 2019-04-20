@@ -1,0 +1,82 @@
+------------------------
+--------Classes---------
+------------------------
+
+A class is a template for a data type. It describes the kinds of information that class will hold and how a programmer will interact with that data.  
+
+----------------
+Creating a Class
+----------------
+Naming: The PEP 8 Style Guide for Python (https://www.python.org/dev/peps/pep-0008/#class-names) recommends the CapWords naming convention when identifying a Class. 
+
+Defining: When defining a class, the 'pass' keyword can be used to indicate that the body of the class was intentionally left blank. This can also be a good time to document what the class is intended to do using the triple quote comment style.
+
+	Instantiation: A class doesn’t accomplish anything simply by being defined. A class must be instantiated. In other words, we must create an instance of the class, in order to breathe life into the schematic. Instantiating a class looks a lot like calling a function. e.g: cool_instance = CoolClass()
+
+		*note*: If a variable is reassigned to a different instance, the prior assignment will be a candidate for 'garbage collection' provided that there is no other variable pointing to it.
+
+		A class instance is also called an 'object'. Instantiation takes a class and turns it into an object. When the type() function is called with an object, it returns the class that the object is an instance of.
+
+	Class Variables: a variable defined within the body of the class. Used for when we want the same data to be available in every instance of a class. You can access all of an object's class variables with the 'object.variable' syntax
+
+	Methods: functions that are defined as part of a class. Methods always have at least this one argument. The first argument in a method is always the object that is calling the method. Convention recommends that we name this first argument 'self'. 'self' is not a special keyword in python and can therefore be renamed. While it is recommended to stick to normal naming convention when regards to 'self', the argument can be renamed in favor of syntax highlighting.
+
+	Constructors: There are several methods that we can define in a Python class that have special behavior. These methods are sometimes called “magic”, because they behave differently from regular methods. Another popular term is dunder methods, so-named because they have two underscores (double-underscore abbreviated to “dunder”) on either side of them.
+		Constructors, much like methods, always have at least one argument (that returns the object calling the method) recommended to be called 'self'. Constructors can also take more then one argument that can be passed by the instantiation syntax of the object.
+
+	Instance Variables: The data held by an object is referred to as an instance variable. Instance variables aren’t shared by all instances of a class — they are variables that are specific to the object they are attached to.
+
+	Attribute Functions: If we attempt to access an attribute of an object (instance variable, class variable) that doesn't exist, it will throw an 'AttributeError'. To determine if a variable exists, we can use getattr() which will return the variable if it exists; or hasattr() which will return a boolean value
+
+
+----------------
+--Constructors--
+----------------
+
+__init__ : this method is used to initialize a newly created object. It is called every time the class is instantiated. The __init__() method should either have no return statement at all (the most common and preferred usage) or it may have a return statement that returns the value None. If the method attempts to return a value other than None, Python will report the error “TypeError: __init__() should return None”. If the method needs to report an error condition, then an exception should be raised.
+
+__repr__: this method is used to tell Python what we want the string representation of the class to be. __repr__ can only have one parameter, which is 'self' and must return a string. While you are allowed to include or exclude any information from the object that you want, the Python documentation recommends that the implementation for __repr__() should contain as much information as possible and if, at all possible, it should contain whatever is necessary to recreate the object.
+
+
+---------
+--Types-- - otherwise known as primitives
+---------
+
+float: floating point numerical values. Values specified with a decimal point. Floats are returned when doing an operation on a set of integers
+
+int: integers. fixed point numerical values
+
+list: a list of types
+
+dict: a list of keys and values
+
+str: strings. sequences of character data
+
+bool: Boolean values. Objects returned as True or False
+
+complex: complex numbers are specified as '<real part>+<imaginary part>j'. e.g: >>>2+3j (2+3j) >>> type(2+3j) <class 'complex'> 
+
+------------------------
+--Functions & Syntax's--
+------------------------
+
+type(variable_name): check the type of variable
+
+object.variable: used to return all of an object's class variables
+
+getattr(object_name, variable_name, arg3(optional)): will return the variable if it exists, otherwise will throw an 'AttributeError'. Arg3 can be specified as a return if the variable doesn't exist. 
+
+hasattr(object_name, variable_name): Similar to 'getattr()' however, returns a boolean value if the variable doesn't exist
+
+dir(object_name): returns a list of an objects attributes at runtime
+				- Python automatically adds a number of attributes to all objects that get created. These internal attributes are usually indicated by double-underscores.
+				- dir() can also be used on Python's native data types; including functions!
+		*note*  - the dir() call on the object of class Examine shows the instance variable created in the object while the call for the class does not. e.g: >>>class Examine:
+						class_var = "This is a class variable"
+						def __init__(self):
+							self.inst_var = "This is an instance variable"
+				  >>>myobj = Examine() 
+				  >>>print(dir(Examine))
+				  ['__doc__', '__init__', '__module__', 'class_var']
+				  >>>print(dir(myobj))
+				  ['__doc__', '__init__', '__module__', 'class_var', 'inst_var']
