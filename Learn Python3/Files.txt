@@ -1,0 +1,52 @@
+--------------
+Reading a File
+--------------
+
+```
+with open('FileName') as 'object':
+	contents = 'object'.read()
+```
+
+with: The with keyword invokes something called a context manager for the file that we’re calling open() on. This context manager takes care of opening the file when we call open() and then closing the file after we leave the indented block. The with syntax replaces older ways to access files where you need to call .close() on the file object manually. We can still open up a file and append to it with the old syntax, as long as we remember to close the file connection afterwards. Since this is necessarily more verbose (requires at least one more line of code) without being any more expressive, using with is preferred.
+
+--------------
+--File Types--
+--------------
+
+.txt: Text files are the only file type that Python doesn't need a parsing library to understand
+
+CSV: stands for Comma-Separated Values and are an example of a text file that impose a structure to their data. CSV files are usually the way that data from spreadsheet software (like Excel or Docs) is exported into a portable format. 
+	**note** - While CSV stands for Comma-Separated Values, it doesn't mean the file is limited to using comma's as delimiters.
+
+JSON: stands for JavaScript Object Notation. While inspired by JavaScript, some JSON is not actually valid JavaScript. JSON's format is quite similar to Python's dictionary syntax. 
+
+--------------
+Useful Methods
+--------------
+
+open('file_name', r(optional)): returns a file as an object using the file's name as the first argument. The second argument in open() is for options:
+	*note* - It's important to note that open() can be used separately of 'with'. However, this older syntax leaves the file open and requires it to be later closed with the use of .close()
+	options:
+	- r: read-only-mode. The default option in open()
+	- w: write-mode. Most commonly used to create a new file. **If used on an existing file, it will completely overwrite the contents of that file**
+	- a: append-mode: allows appending to the file. The use of .write() will now add that line to the bottom of the file opened
+	- newline = 'str': creates a line-break at the specified string. Commonly used with CSV files; when this is not specified, newlines embedded inside quoted fields will not be interpreted correctly
+
+.close(): used to close an open file. This is only necessary if the file is opened without the use of the 'with' syntax
+
+.write(arg1): used to write arg1 to the file
+
+.read(): returns the full contents of the file
+
+.readline(): used to return a single line at a time
+	*note* - if the entire file is read using this methods, subsequent calls will not return an error, but simply return an empty string
+
+.readlines(): used to read the contents of a file line by line
+
+.writeheader(): writes all the fields passed to the 'fieldnames' parameter
+
+.writerow(arg1): writes each line passed into it onto a new row
+
+json.load('file'): executes the contents of a file
+
+json.dump(data_object, file_object): writes the entire contents of the data_object to the file_object
