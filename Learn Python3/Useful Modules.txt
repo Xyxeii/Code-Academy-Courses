@@ -14,3 +14,4 @@ matplotlib: helps with plotting python code in 2d
 
 decimal: helps perform decimal place arithmetic more accurately
 
+csv: helpful in formatting .csv file types
