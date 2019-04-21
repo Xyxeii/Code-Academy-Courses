@@ -31,7 +31,7 @@ list(): can be used to gather a list of all keys in a dictionary
 
 .keys(): returns a dict_keys object. You cannot modify this value, however it can be used to iterate over. These is no guarenteed order for the list returned. In most cases, the key list is returned in the same order as the insertion, however, that behavior is NOT guaranteed and should not be depended on by your program. A common practice is to pass keys() to the sorted() function to ensure that the list of keys is sorted before iteration.
 
-.values(): returns a dict_values object. This is similar to .keys() but used for values. Can 
+.values(): returns a dict_values object. This is similar to .keys() but used for values.
 
 .items(): returns a dict_list object. Each element of dict_list returned by .items() is a tuple consisting of (key, value)
 
