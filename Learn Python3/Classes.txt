@@ -28,14 +28,53 @@ Defining: When defining a class, the 'pass' keyword can be used to indicate that
 
 	Attribute Functions: If we attempt to access an attribute of an object (instance variable, class variable) that doesn't exist, it will throw an 'AttributeError'. To determine if a variable exists, we can use getattr() which will return the variable if it exists; or hasattr() which will return a boolean value
 
+----------------------------
+Inheritance and Polymorphism
+----------------------------
 
-----------------
---Constructors--
-----------------
+If the bulk of a class’s definition is useful, but we have a new use case that is distinct from how the original class was used, we can inherit from the original class. We call this inheritance into a new class, 'a subclass'. You can create a subclass by passing a class's constructors into a new class as a parameter. Multiple classes can be passed into a subclass. This concept is known as 'multiple inheritance'. 
 
-__init__ : this method is used to initialize a newly created object. It is called every time the class is instantiated. The __init__() method should either have no return statement at all (the most common and preferred usage) or it may have a return statement that returns the value None. If the method attempts to return a value other than None, Python will report the error “TypeError: __init__() should return None”. If the method needs to report an error condition, then an exception should be raised.
+exceptions hierarchy - https://docs.python.org/3/library/exceptions.html#exception-hierarchy
+
+Overriding Methods
+Inheritance is a useful way of creating objects with different class variables, but is that all it’s good for? What if one of the methods needs to be implemented differently? In Python, all we have to do to override a method definition is to offer a new definition for the method in our subclass.
+
+An overridden method is one that has a different definition from its parent class. What if User class didn’t have an is_admin flag but just checked if it had permission for something based on a permissions dictionary? It could look like this:
+
+class User:
+  def __init__(self, username, permissions):
+    self.username = username
+    self.permissions = permissions
+
+  def has_permission_for(self, key):
+    if self.permissions.get(key):
+      return True
+    else:
+      return False
+
+Above we defined a class User which takes a permissions parameter in its constructor. Let’s assume permissions is a dict. User has a method .has_permission_for() implemented, where it checks to see if a given key is in its permissions dictionary. We could then define our Admin user like this:
+
+class Admin(User):
+  def has_permission_for(self, key):
+    return True
+
+
+Here we define an Admin class that subclasses User. It has all methods, attributes, and functionality that User has. However, if you call has_permission_for on an instance of Admin, it won’t check its permissions dictionary. Since this User is also an Admin, we just say they have permission to see everything!
+
+------------------------
+--Constructors & Methods
+------------------------
+
+__init__ : this method is know as a 'Constructor' and is used to initialize a newly created object. It is called every time the class is instantiated. The __init__() method should either have no return statement at all (the most common and preferred usage) or it may have a return statement that returns the value None. If the method attempts to return a value other than None, Python will report the error “TypeError: __init__() should return None”. If the method needs to report an error condition, then an exception should be raised.
 
 __repr__: this method is used to tell Python what we want the string representation of the class to be. __repr__ can only have one parameter, which is 'self' and must return a string. While you are allowed to include or exclude any information from the object that you want, the Python documentation recommends that the implementation for __repr__() should contain as much information as possible and if, at all possible, it should contain whatever is necessary to recreate the object.
+
+__iter__:
+
+__len__: a method set to return the length of the set parameters. Allows the class to be used with the len() syntax
+
+__contains__: allows the use of the 'char in characters' syntax to check if a value exists inside of it
+
 
 
 ---------
@@ -80,3 +119,7 @@ dir(object_name): returns a list of an objects attributes at runtime
 				  ['__doc__', '__init__', '__module__', 'class_var']
 				  >>>print(dir(myobj))
 				  ['__doc__', '__init__', '__module__', 'class_var', 'inst_var']
+
+issubclass(baseclass, subclass): returns True value if arg1 is a subclass of arg2, and false if it's not. If either argument isn't a subclass, it 									 returns a TypeError.
+
+super().methodName(args): gives us a proxy object. With this proxy object, we can invoke the method of an object’s parent class (also called its superclass).
