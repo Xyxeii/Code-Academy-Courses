@@ -1,8 +1,9 @@
 from money import Money
 from datetime import date, datetime, timedelta
 import operator
+import pprint
+pp = pprint.PrettyPrinter()
 
-#print(date.today())
 client_database = {}
 
 class Art():
@@ -66,6 +67,11 @@ class Client():
 	def account_balance(self, currency='USD'):
 		return str(Money(client_database[self.name]['Account Balance'], currency))
 
+	def add_account(self, amount, currency='USD'):
+		client_database[self.name]['Account Balance'] += amount
+		return "{amount} has been added to your account. Type 'username.account_balance' to print your balance.".format(amount=Money(amount, currency))
+
+
 	def add_wishlist(self, artwork):
 		client_database[self.name]['Wishlist'].append(artwork.title)
 		print("Added '{art}' to your wishlist! Type "".wishlist to view it!".format(art=artwork.title))
@@ -77,21 +83,26 @@ class Client():
 	def wishlist(self):
 		return client_database[self.name]['Wishlist']
 
-
+########################################################################
 
 
 veneer = Marketplace()
 edytta = Client('Edytta Halpirt')
 moma = Client('The MOMA', 10000000, 'New York', True)
+JimH = Client('Jim Halpert', 500000)
+DwightS = Client('Dwight Schrute', 4000000)
+PamB = Client('Pam Beesly', 400000)
+MichaelS = Client('Michael Scott', 700000)
+FatimaM = Client('Fatima Martiniano')
 
 girl_with_mandolin = Art("Picasso, Pablo", "Girl with a Mandolin (Fanny Tellier)", "oil on canvas", "1910", edytta)
-#test_painting = Art("Martiniano, Anthony", "Boy with stuff", "paper", "2019", moma)
+test_painting = Art("Martiniano, Anthony", "Boy with stuff", "paper", "2019", moma)
 
 
 edytta.sell_artwork(girl_with_mandolin, 6000000, 30)
-#moma.sell_artwork(test_painting, '$100M (USD)')
+moma.sell_artwork(test_painting, 10000000, 30)
 
-#moma.buy_artwork(girl_with_mandolin)
+moma.buy_artwork(girl_with_mandolin)
 
 #print(moma.wallet)
 #moma.add_wishlist(girl_with_mandolin)
@@ -100,10 +111,11 @@ edytta.sell_artwork(girl_with_mandolin, 6000000, 30)
 
 #moma.remove_wishlist(girl_with_mandolin)
 print("Listings:")
-print(veneer.show_listings())
+pp.pprint(veneer.show_listings())
+FatimaM.add_account(500000)
 
-# print("\nDatabase:")
-# print(client_database)
+print("Database:")
+pp.pprint(client_database)
 
 #print(moma.account_balance())
-
+#print(FatimaM.account_balance())
